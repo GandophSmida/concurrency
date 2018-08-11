@@ -1,22 +1,26 @@
-package com.mall.concurrcy.controller;
+package com.mall.concurrcy.autoincrease;
 
-import com.mall.concurrcy.annotations.NotThreadSafe;
+import com.mall.concurrcy.annotations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.concurrent.*;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.atomic.LongAdder;
 
 @Slf4j
-@NotThreadSafe
-public class ConcurrencyTest {
-    private static final Logger log = LoggerFactory.getLogger(ConcurrencyTest.class);
+@ThreadSafe
+public class LongAdderTest {
+    private static final Logger log = LoggerFactory.getLogger(LongAdderTest.class);
 
     private static int clientTotal=5000;
 
     private static int threadTotal=200;
 
-    public static int count=0;
+    public static LongAdder count=new LongAdder();
 
     public static void main(String[] args) throws InterruptedException {
         ExecutorService executorService = Executors.newCachedThreadPool();
@@ -41,6 +45,6 @@ public class ConcurrencyTest {
     }
 
     private static void add(){
-        count++;
+        count.increment();
     }
 }
