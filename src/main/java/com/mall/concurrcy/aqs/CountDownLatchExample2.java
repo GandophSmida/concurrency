@@ -7,6 +7,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 线程中断控制
+ */
 @Slf4j
 public class CountDownLatchExample2 {
 
