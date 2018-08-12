@@ -2,8 +2,6 @@ package com.mall.concurrcy.autoincrease;
 
 import com.mall.concurrcy.annotations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -14,7 +12,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @Slf4j
 @ThreadSafe
 public class AtomicBooleanTest { //让某段代码只执行一次
-    private static final Logger log = LoggerFactory.getLogger(AtomicBooleanTest.class);
 
     private static AtomicBoolean isHappened = new AtomicBoolean(false);
 

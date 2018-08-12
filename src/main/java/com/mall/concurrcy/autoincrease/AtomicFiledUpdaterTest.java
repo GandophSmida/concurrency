@@ -2,15 +2,12 @@ package com.mall.concurrcy.autoincrease;
 
 import com.mall.concurrcy.annotations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
 @Slf4j
 @ThreadSafe
 public class AtomicFiledUpdaterTest {
-    private static final Logger log = LoggerFactory.getLogger(AtomicFiledUpdaterTest.class);
 
     public static AtomicIntegerFieldUpdater<AtomicFiledUpdaterTest> updater = AtomicIntegerFieldUpdater.newUpdater(AtomicFiledUpdaterTest.class,"count");
 

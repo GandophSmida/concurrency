@@ -2,8 +2,6 @@ package com.mall.concurrcy.autoincrease;
 
 import com.mall.concurrcy.annotations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -14,7 +12,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Slf4j
 @ThreadSafe
 public class AtomicIntegerTest {
-    private static final Logger log = LoggerFactory.getLogger(AtomicIntegerTest.class);
 
     private static int clientTotal=5000;
 
